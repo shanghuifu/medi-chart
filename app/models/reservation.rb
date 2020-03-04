@@ -3,4 +3,7 @@ class Reservation < ApplicationRecord
     validates :date
     validates :time
   end
+
+  belongs_to :patient
+  belongs_to :schedule
 end
