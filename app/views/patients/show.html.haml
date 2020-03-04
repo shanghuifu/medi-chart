@@ -22,12 +22,12 @@
         = @patient.email
       %td
         = @patient.phone
-  .logbox
-    = form_for @log, url: patient_logs_path(@patient.id) do |f|
-      = f.text_field :text, placeholder: "記録"
-      = f.submit "送信"
-  .preview
-    - @logs.each do |log|
-      .text
-        = log.created_at.strftime('%Y/%m/%d')
-        = log.text
+  = form_for @log, url: patient_logs_path(@patient.id) do |f|
+    = f.text_field :text, placeholder: "記録"
+    = f.submit "送信"
+  - @logs.each do |log|
+    .text
+      = log.created_at.strftime('%y/%m/%d')
+      = log.text
+  = link_to patients_path do
+    患者一覧
