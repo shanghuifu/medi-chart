@@ -1,0 +1,29 @@
+.title
+  %p 予約一覧
+.body
+  %table
+    %tr
+      %th 時間
+    - @reservations.each do |r|
+      %tr
+        %td
+          = r.time
+    %tr
+      %th 3/4
+    - @reservations.each do |r|
+      %tr
+        -# %td
+        -#   = link_to patient_path(patient.id) do
+        -#     = patient.name
+        -# %td
+        -#   = patient.kana
+        -# %td
+        -#   未実装
+        -# %td
+        -#   未実装
+        -# %td
+        -#   = patient.email
+        -# %td
+        -#   = patient.phone
+  = link_to new_patient_path do
+    患者登録
