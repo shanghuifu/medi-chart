@@ -26,5 +26,6 @@ test:
 production:
   <<: *default
   database: medi-chart_production
-  username: medi-chart
-  password: <%= ENV['MEDI-CHART_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
