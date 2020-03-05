@@ -3,5 +3,5 @@ Rails.application.routes.draw do
     resources :logs, only: :create
   end
   resources :reservations, only: [:index, :new, :create]
-  root to: "patients#index"
+  root to: "reservations#index"
 end

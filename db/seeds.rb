@@ -6,7 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Schedule.create([{time: "~10:00"},
+Schedule.create([{time: "~9:40"},
+                  {time: "10:00"},
                   {time: "10:20"},
                   {time: "10:40"},
                   {time: "11:00"},

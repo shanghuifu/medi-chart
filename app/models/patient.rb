@@ -7,4 +7,5 @@ class Patient < ApplicationRecord
   end
   
   has_many :logs
+  has_many :reservations
 end
