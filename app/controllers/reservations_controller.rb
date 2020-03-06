@@ -11,7 +11,6 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @reservation = Reservation.new(reservation_params)
     if @reservation.save
       redirect_to reservations_path
@@ -22,15 +21,10 @@ class ReservationsController < ApplicationController
 
   private
   def reservation_params
-    # binding.pry
-    a = params.require(:reservation).permit(:"date(1i)",
+    params.require(:reservation).permit(:"date(1i)",
                                         :"date(2i)",
                                         :"date(3i)",
                                         :schedule_id,
                                         :patient_id)
-    # date = Date.new(a["date(1i)"].to_i,
-    #                 a["date(2i)"].to_i,
-    #                 a["date(3i)"].to_i)
-    # params.merge(date: date)
   end
 end
