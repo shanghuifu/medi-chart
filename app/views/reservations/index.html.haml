@@ -10,15 +10,14 @@
     %tr
       %th 
         時間
-        - for i in 0..13 do
-          %td
-            = (Date.today + i).strftime("%m/%d")
+      - for i in 0..13 do
+        %th
+          = (Date.today + i).strftime("%m/%d %a")
     - @schedules.each do |s|
       %tr
         %td
           = s.time
-        - @reservations.each_with_index do |r, i|
+        - 14.times do |i|
           %td
-            = s.id
-            = i + 1
-            = r.patient.name
+            - @reservations.each do |r|
+              = r.rsv_search(s.id, i)
