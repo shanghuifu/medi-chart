@@ -1,5 +1,9 @@
 .title
   %p 患者詳細
+  = link_to patients_path do
+    患者一覧
+  = link_to reservations_path do
+    予約一覧
 .body
   %table
     %tr
@@ -29,5 +33,3 @@
     .text
       = log.created_at.strftime('%y/%m/%d')
       = log.text
-  = link_to patients_path do
-    患者一覧
