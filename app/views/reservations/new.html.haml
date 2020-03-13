@@ -1,3 +1,11 @@
+.title
+  %p 予約登録 
+  = link_to new_patient_path do
+    患者登録
+  = link_to patients_path do
+    患者一覧
+  = link_to reservations_path do
+    予約一覧
 = form_for @reservation do |r|
   = r.date_select :date, {placeholder: "日付を選択してください"}
   = r.select :schedule_id, @schedules.map{ |schedule| [schedule.time, schedule.id] }
