@@ -22,4 +22,5 @@
           - 14.times do |days|
             %td
               - @reservations[i].each do |rsv|
-                = rsv.rsv_date_check(days)
+                = link_to patient_path(rsv.patient_id) do
+                  = rsv.rsv_date_check(days)
