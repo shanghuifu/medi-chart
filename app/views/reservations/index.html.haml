@@ -14,12 +14,12 @@
       - for i in 0..13 do
         %th
           = (Date.today + i).strftime("%m/%d %a")
-    - @schedules.each do |s|
+    - @schedules.each_with_index do |schedule, i|
       %tr
         %td
-          = s.time
-        - 14.times do |i|
-          %td
-            - @reservations.each do |r|
-              = link_to patient_path(r.patient_id) do
-                = r.rsv_search(s.id, i)
+          = schedule.time
+        - if @reservations[i].present?
+          - 14.times do |days|
+            %td
+              - @reservations[i].each do |rsv|
+                = rsv.rsv_date_check(days)

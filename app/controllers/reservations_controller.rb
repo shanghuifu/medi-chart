@@ -1,7 +1,7 @@
 class ReservationsController < ApplicationController
   def index
-    @reservations = Reservation.all
     @schedules = Schedule.all
+    @reservations = Reservation.rsv_time_sort(@schedules.length)
   end
 
   def new
