@@ -1,0 +1,7 @@
+.header_container {
+  float: right;
+  height: 10vh;
+  width: 85vw;
+  @include clearfix();
+  background-color: rgb(197, 194, 255);
+}
