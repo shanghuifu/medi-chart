@@ -1,11 +1,18 @@
 .main_container {
   float: right;
-  width: 85%;
+  height: 90vh;
+  width: 85vw;
   @include clearfix();
+  overflow: scroll;
   &__top {
-
   }
   &__bottom {
-    
+    &__content {
+      height: auto;
+      width: auto;
+      margin: 0 auto;
+      margin-top: 10px;
+      background-color: rgb(233, 223, 255);
+    }
   }
 }

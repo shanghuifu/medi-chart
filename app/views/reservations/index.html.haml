@@ -1,21 +1,20 @@
 .main_container
   .main_container__top
-    %p 予約一覧
   .main_container__bottom
-    %table
-      %tr
-        -# %th 
-        -#   時間
-        - for i in 0..13 do
-          %th
-            = (Date.today + i).strftime("%m/%d(%a)")
-      - @schedules.each_with_index do |schedule, i|
+    .main_container__bottom__content
+      %table
         %tr
-          -# %td
-          -#   = schedule.time
-          - if @reservations[i].present?
-            - 14.times do |days|
-              %td
-                - @reservations[i].each do |r|
-                  = link_to patient_path(r.patient_id) do
-                    = r.rsv_date_check(days)
+          %th 
+          - for i in 0..13 do
+            %th
+              = (Date.today + i).strftime("%m/%d(%a)")
+        - @schedules.each_with_index do |schedule, i|
+          %tr
+            %td
+              = schedule.time
+            - if @reservations[i].present?
+              - 14.times do |days|
+                %td
+                  - @reservations[i].each do |r|
+                    = link_to patient_path(r.patient_id) do
+                      = r.rsv_date_check(days)
