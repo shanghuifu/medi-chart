@@ -14,6 +14,14 @@ class Reservation < ApplicationRecord
       return none
     end
   end
+
+  def rsv_time_check(schedule_id)
+    if self.schedule_id == schedule_id
+      return self.patient.name
+    else
+      return nil
+    end
+  end
   
   def self.rsv_time_sort(schedules)
     sorted_ary = []

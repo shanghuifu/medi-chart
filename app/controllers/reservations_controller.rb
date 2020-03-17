@@ -1,13 +1,12 @@
 class ReservationsController < ApplicationController
   def index
-    @schedules = Schedule.all
     @reservations = Reservation.rsv_time_sort(@schedules.length)
   end
 
   def new
     @reservation = Reservation.new
-    @schedules = Schedule.all
-    @patients = Patient.all
+    @schedules   = Schedule.all
+    @patients    = Patient.all
   end
 
   def create
@@ -27,4 +26,5 @@ class ReservationsController < ApplicationController
                                         :schedule_id,
                                         :patient_id)
   end
+
 end
