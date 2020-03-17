@@ -1,0 +1,15 @@
+.side_container {
+  float: left;
+  width: 15%;
+  height: 100vh;
+  background-color: rgb(211, 209, 248);
+  @include clearfix();
+  &__top {
+    &__main {
+
+    }
+  }
+  &__bottom {
+
+  }
+}
