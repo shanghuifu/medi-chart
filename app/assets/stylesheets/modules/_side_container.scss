@@ -1,15 +1,36 @@
 .side_container {
   float: left;
-  width: 15%;
   height: 100vh;
-  background-color: rgb(211, 209, 248);
+  width: 15%;
   @include clearfix();
+  background-color: rgb(211, 209, 248);
   &__top {
-    &__main {
-
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(158, 156, 199);
+    &__title {
+      width: 90%;
+      height: 50px;
+      line-height: 50px;
+      box-sizing: border-box;
+      margin: 0 auto;
+      border-bottom: solid 1px white;
+      text-align: center;
+      background-color: rgb(109, 107, 148);
+      &--title {
+      }
     }
   }
   &__bottom {
-
+    height: 90%;
+    overflow: scroll;
+    &__content {
+      width: 90%;
+      height: auto;
+      margin: 0 auto;
+      background-color: rgb(143, 128, 170);
+    }
   }
 }

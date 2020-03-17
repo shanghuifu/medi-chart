@@ -1,6 +1,7 @@
 .main_container {
   float: right;
   width: 85%;
+  @include clearfix();
   &__top {
 
   }
