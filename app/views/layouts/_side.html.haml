@@ -8,7 +8,7 @@
         .table_header_today.table_header
           = Date.today.strftime("%y/%m/%d (%a)")
         - @schedules.each_with_index do |schedule, i|
-          %tr
+          %tr.table_row
             %td.table_data
               = schedule.time
             %td
