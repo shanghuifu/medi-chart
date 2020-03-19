@@ -3,14 +3,15 @@
   .main_container__bottom
     .main_container__bottom__content
       %table
-        %tr
-          %th 
+        %tr.table_row
+          %th.table_header#table_header_week
           - for i in 0..13 do
-            %th
+            %th.table_header#table_header_week
               = (Date.today + i).strftime("%m/%d(%a)")
+        %tr#spacer
         - @schedules.each_with_index do |schedule, i|
           %tr
-            %td
+            %td.table_data
               = schedule.time
             - if @reservations[i].present?
               - 14.times do |days|

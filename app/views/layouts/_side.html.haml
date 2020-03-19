@@ -5,10 +5,10 @@
   .side_container__bottom
     .side_container__bottom__content
       %table
-        .table_header_today.table_header
+        .table_header
           = Date.today.strftime("%y/%m/%d (%a)")
         - @schedules.each_with_index do |schedule, i|
-          %tr.table_row
+          %tr
             %td.table_data
               = schedule.time
             %td
