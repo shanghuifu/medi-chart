@@ -10,8 +10,11 @@
     &__content {
       height: auto;
       width: auto;
+      display: inline-block;
+      box-sizing: border-box;
       margin: 0 auto;
       margin-top: 10px;
+      padding: 5px 10px;
       background-color: rgb(233, 223, 255);
     }
   }

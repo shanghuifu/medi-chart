@@ -1,15 +1,15 @@
 .side_container
   .side_container__top
     .side_container__top__title
-      = Date.today.strftime("%y/%m/%d (%a)")
+      %h1 Medi-Chart(beta)
   .side_container__bottom
     .side_container__bottom__content
       %table
-        %tr
-          %th 時間
+        .table_header_today.table_header
+          = Date.today.strftime("%y/%m/%d (%a)")
         - @schedules.each_with_index do |schedule, i|
           %tr
-            %td
+            %td.table_data
               = schedule.time
             %td
               - @today_rsv.each do |r|

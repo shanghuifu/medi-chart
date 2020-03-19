@@ -4,4 +4,24 @@
   width: 85vw;
   @include clearfix();
   background-color: rgb(197, 194, 255);
+  &__title {
+    float: right;
+    line-height: 10vh;
+    padding: 0 15px;
+    margin-left: 30px;
+    background-color: rgb(179, 176, 230);
+  }
+  &__links {
+    float: left;
+    line-height: 10vh;
+    padding: 0 15px;
+    margin-right: 30px;
+    .link {
+      display: inline-block;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
 }

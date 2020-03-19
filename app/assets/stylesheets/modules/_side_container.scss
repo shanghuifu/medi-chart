@@ -11,15 +11,16 @@
     align-items: center;
     background-color: rgb(158, 156, 199);
     &__title {
-      height: 50px;
+      height: 7vh;
       width: 90%;
-      line-height: 50px;
+      line-height: 7vh;
       box-sizing: border-box;
       margin: 0 auto;
       border-bottom: solid 1px white;
       text-align: center;
       background-color: rgb(109, 107, 148);
-      &--title {
+      >h1 {
+        font-size: 1.1rem;
       }
     }
   }
@@ -29,9 +30,15 @@
     &__content {
       height: auto;
       width: 90%;
+      box-sizing: border-box;
       margin: 0 auto;
       margin-top: 5%;
+      padding: 5px 10px;
       background-color: rgb(143, 128, 170);
+      .table_header_today {
+        width: 100%;
+        font-weight: bold;
+      }
     }
   }
 }
