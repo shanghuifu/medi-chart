@@ -1,6 +1,7 @@
 @import 'config/reset';
 @import 'mixins/general';
-@import 'modules/side_container';
-@import 'modules/header_container';
-@import 'modules/main_container';
+@import 'modules/side';
+@import 'modules/header';
+@import 'modules/main';
 @import 'modules/table';
+@import 'modules/generals';
