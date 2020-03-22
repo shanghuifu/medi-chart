@@ -4,26 +4,43 @@
   .main_container__bottom
     .main_container__bottom__content
       %table
-        %tr
-          %th 名前
-          %th 読み
-          %th 初回
-          %th 誕生日
-          %th email
-          %th 電話番号
+        %tr.table_row
+          %th.th_normal  名前
+          %th.th_normal  読み
+          %th.th_narrow  誕生日
+          %th.th_narrow  年齢
+          %th.th_narrow  性別
+          %th.th_normal  郵便番号
+          %th.th_normal  住所1
+          %th.th_normal  住所2
+          %th.th_wide    email
+          %th.th_narrow  電話番号
         %tr
           %td
             = @patient.name
           %td
             = @patient.kana
           %td
-            未実装
+            = @patient.birthday
           %td
-            未実装
+            = @patient.age
+          %td
+            -# = @patient.sex
+          %td
+            = @patient.zipcode
+          %td
+            -# = @patient.address1
+          %td
+            -# = @patient.address2
           %td
             = @patient.email
           %td
             = @patient.phone
+    .main_container__bottom__content
+      = "#{@patient.name}さんの今後の予約"
+      -# - @rsvs.each do |rsv|
+      -#   = rsv.date
+    .main_container__bottom__content
       = form_for @log, url: patient_logs_path(@patient.id) do |f|
         = f.text_field :text, placeholder: "記録"
         = f.submit "送信"

@@ -5,16 +5,16 @@
     .main_container__bottom__content
       %table
         %tr.table_row
-          %th.table_header 名前
-          %th.table_header 
-          %th.table_header 誕生日
-          %th.table_header 年齢
-          %th.table_header 性別
-          %th.table_header 郵便番号
-          %th.table_header 住所1
-          %th.table_header 住所2
-          %th.table_header email
-          %th.table_header 電話番号
+          %th.th_normal  名前
+          %th.th_normal  読み
+          %th.th_narrow  誕生日
+          %th.th_narrow  年齢
+          %th.th_narrow  性別
+          %th.th_normal  郵便番号
+          %th.th_normal  住所1
+          %th.th_normal  住所2
+          %th.th_wide    email
+          %th.th_narrow  電話番号
         - @patients.each do |patient|
           %tr
             %td
