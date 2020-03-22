@@ -1,31 +1,33 @@
-.title
-  %p 患者詳細
-.body
-  %table
-    %tr
-      %th 名前
-      %th 読み
-      %th 初回
-      %th 誕生日
-      %th email
-      %th 電話番号
-    %tr
-      %td
-        = @patient.name
-      %td
-        = @patient.kana
-      %td
-        未実装
-      %td
-        未実装
-      %td
-        = @patient.email
-      %td
-        = @patient.phone
-  = form_for @log, url: patient_logs_path(@patient.id) do |f|
-    = f.text_field :text, placeholder: "記録"
-    = f.submit "送信"
-  - @logs.each do |log|
-    .text
-      = log.created_at.strftime('%y/%m/%d')
-      = log.text
+.main_container
+  .main_container__top
+    %p 患者詳細
+  .main_container__bottom
+    .main_container__bottom__content
+      %table
+        %tr
+          %th 名前
+          %th 読み
+          %th 初回
+          %th 誕生日
+          %th email
+          %th 電話番号
+        %tr
+          %td
+            = @patient.name
+          %td
+            = @patient.kana
+          %td
+            未実装
+          %td
+            未実装
+          %td
+            = @patient.email
+          %td
+            = @patient.phone
+      = form_for @log, url: patient_logs_path(@patient.id) do |f|
+        = f.text_field :text, placeholder: "記録"
+        = f.submit "送信"
+      - @logs.each do |log|
+        .text
+          = log.created_at.strftime('%y/%m/%d')
+          = log.text

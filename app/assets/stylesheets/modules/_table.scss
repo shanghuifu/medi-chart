@@ -1,5 +1,9 @@
+.table_row {
+  box-sizing: border-box;
+  border-bottom: solid 1px rgb(158, 156, 165);
+}
+
 .table_header {
-  width: 100%;
   padding-bottom: 5px;
   border-bottom: solid 2px rgba(164, 160, 167, 0.623);
   margin-bottom: 5px;
@@ -13,10 +17,6 @@
   display: inline-block;
 }
 
-.table_row {
-  box-sizing: border-box;
-  border-bottom: solid 1px rgb(158, 156, 165);
-}
 
 #table_header_week {
   padding: 0 10px 5px 0;

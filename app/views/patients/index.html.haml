@@ -1,26 +1,40 @@
-.title
-  %p 患者一覧
-.body
-  %table
-    %tr
-      %th 名前
-      %th 読み
-      %th 初回
-      %th 誕生日
-      %th email
-      %th 電話番号
-    - @patients.each do |patient|
-      %tr
-        %td
-          = link_to patient_path(patient.id) do
-            = patient.name
-        %td
-          = patient.kana
-        %td
-          未実装
-        %td
-          未実装
-        %td
-          = patient.email
-        %td
-          = patient.phone
+.main_container
+  .main_container__top
+    -# %patient 患者一覧
+  .main_container__bottom
+    .main_container__bottom__content
+      %table
+        %tr.table_row
+          %th.table_header 名前
+          %th.table_header 
+          %th.table_header 誕生日
+          %th.table_header 年齢
+          %th.table_header 性別
+          %th.table_header 郵便番号
+          %th.table_header 住所1
+          %th.table_header 住所2
+          %th.table_header email
+          %th.table_header 電話番号
+        - @patients.each do |patient|
+          %tr
+            %td
+              = link_to patient_path(patient.id) do
+                = patient.name
+            %td
+              = patient.kana
+            %td
+              = patient.birthday
+            %td
+              = patient.age
+            %td
+              -# = patient.sex
+            %td
+              = patient.zipcode
+            %td
+              -# = patient.address1
+            %td
+              -# = patient.address2
+            %td
+              = patient.email
+            %td
+              = patient.phone

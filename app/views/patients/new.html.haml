@@ -1,8 +1,11 @@
-.title
-  %p 患者登録
-= form_for @patient do |f|
-  = f.text_field :name, placeholder: "名前"
-  = f.text_field :kana, placeholder: "よみ"
-  = f.text_field :phone, placeholder: "電話"
-  = f.text_field :email, placeholder: "email"
-  = f.submit "登録する"
+.main_container
+  .main_container__top
+    %p 患者登録
+  .main_container__bottom
+    .main_container__bottom__content
+      = form_for @patient do |f|
+        = f.text_field :name, placeholder: "名前"
+        = f.text_field :kana, placeholder: "よみ"
+        = f.text_field :phone, placeholder: "電話"
+        = f.text_field :email, placeholder: "email"
+        = f.submit "登録する"

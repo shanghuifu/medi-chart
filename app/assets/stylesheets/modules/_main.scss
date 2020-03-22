@@ -4,7 +4,9 @@
   width: 85vw;
   @include clearfix();
   overflow: scroll;
+  background-color: rgb(233, 223, 255);
   &__top {
+
   }
   &__bottom {
     &__content {
@@ -14,7 +16,6 @@
       box-sizing: border-box;
       margin: 0 auto;
       padding: 15px 10px;
-      background-color: rgb(233, 223, 255);
     }
   }
 }
