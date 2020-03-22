@@ -1,32 +1,58 @@
-# MEDI-CHART
+# Medi-Chart
+治療院の管理者やスタッフを対象に、患者の情報や予約を一括で管理できるアプリケーションです。
 
-## アプリ概要
-このアプリは患者の情報や予約を一括で管理する、いわば電子カルテの簡易版です。
 
 ## 動機
 私の父が経営する治療院では患者のカルテや予約を全て紙媒体で管理しています。しかし、数千人分の情報を扱うことを踏まえると、決して効率的とは言えません。そこで、それらの情報をPC上でまとめて管理できれば、業務効率化と共にミスや手間も減ると考え、アプリの作成に至りました。
 
+
 ## 開発環境・使用技術
-- HTML5(haml)
-- CSS3(sass/scss)
-- Ruby(2.5.1)
-- Ruby on Rails(5.2.4)
-  Things you may want to cover:
+- フロントエンド
+  - HTML
+    - haml
+  - CSS
+    - sass
+    - scss
 
-* Ruby version
+- サーバーサイド
+  - Ruby(2.5.1)
+  - Ruby on Rails(5.2.4)
 
-* System dependencies
+- DB
+  - MySQL(5.6)
 
-* Configuration
+- production
+  - AWS
+    - EC2
+    - ELB
+  - deploy
+    - capistrano
 
-* Database creation
 
-* Database initialization
+## 機能
+- 予約管理
+  - 予約の登録
+  - 一覧表示
+  - 編集、削除(実装中)
+  - 日付検索(実装中)
 
-* How to run the test suite
+- 患者管理
+  - 登録、一覧、詳細表示
+  - 治療ログの記録
+  - 編集、削除(実装中)
+  - 患者名検索(実装中)
 
-* Services (job queues, cache servers, search engines, etc.)
+- その他(実装予定)
+  - 患者にタグ(属性)付け
+  - 予約確認メール自動送信
+  - 予約自動キャンセル
+  - 複数の医師を扱う
+  - 操作制限
+  - 会計処理
+  - リアルタイム電話番号取得
 
-* Deployment instructions
 
-* ...
+## 今後の展望
+まずは上記機能を全て実装し、最終的には父の治療院で実運用することを目標としています。
+
+また、今回はrubyやrailsを用いてwebアプリケーションを作成しましたが、今後開発していく中で環境に不都合があれば言語の変更をするかもしれません。
