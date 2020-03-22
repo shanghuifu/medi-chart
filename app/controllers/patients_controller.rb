@@ -18,8 +18,10 @@ class PatientsController < ApplicationController
 
   def show
     @patient = Patient.find(params[:id])
-    @logs = @patient.logs.includes(:patient)
-    @log = Log.new
+    @logs    = @patient.logs.includes(:patient)
+    @log     = Log.new
+    @rsvs    = Reservation.where(patient_id: params[:id])
+                          .where('date => ?', Date.today)
   end
 
   private
