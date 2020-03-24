@@ -18,6 +18,24 @@ class ReservationsController < ApplicationController
     end
   end
 
+  def edit
+    @reservation = Reservation.find(params[:id])
+    @schedules   = Schedule.all
+    @patients    = Patient.all
+  end
+
+  def update
+    reservation = Reservation.find(params[:id])
+    reservation.update(reservation_params)
+    redirect_to reservations_path
+  end
+
+  def destroy
+    rsv = Reservation.find(params[:id])
+    rsv.destroy
+    redirect_to reservations_path
+  end
+
   private
   def reservation_params
     params.require(:reservation).permit(:"date(1i)",
