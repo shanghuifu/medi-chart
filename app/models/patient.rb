@@ -6,6 +6,6 @@ class Patient < ApplicationRecord
     validates :email
   end
   
-  has_many :logs
-  has_many :reservations
+  has_many :logs, dependent: :delete_all
+  has_many :reservations, dependent: :destroy
 end
