@@ -22,6 +22,23 @@ class PatientsController < ApplicationController
     @log     = Log.new
     @rsvs    = Reservation.where(patient_id: params[:id])
                           .where('date >= ?', Date.today)
+                          .order(:date)
+  end
+
+  def edit
+    @patient = Patient.find(params[:id])
+  end
+
+  def update
+    patient = Patient.find(params[:id])
+    patient.update(patient_params)
+    redirect_to patient_path(params[:id])
+  end
+
+  def destroy
+    patient = Patient.find(params[:id])
+    patient.destroy
+    redirect_to reservations_path
   end
 
   private
