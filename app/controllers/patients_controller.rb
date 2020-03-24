@@ -21,7 +21,7 @@ class PatientsController < ApplicationController
     @logs    = @patient.logs.includes(:patient)
     @log     = Log.new
     @rsvs    = Reservation.where(patient_id: params[:id])
-                          .where('date => ?', Date.today)
+                          .where('date >= ?', Date.today)
   end
 
   private
