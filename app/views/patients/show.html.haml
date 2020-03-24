@@ -34,12 +34,16 @@
             -# = @patient.address2
           %td
             = @patient.email
-          %td
+          %td.table_data
             = @patient.phone
+          %td
+            = link_to "[修正]", "/patients/#{@patient.id}/edit"
+          %td
+            = link_to "[削除]", "/patients/#{@patient.id}", method: :delete
     .main_container__bottom__content
       = "#{@patient.name}さんの今後の予約"
-      .main_container__bottom__content--next_rsv
-        - @rsvs.each do |rsv|
+      - @rsvs.each do |rsv|
+        .main_container__bottom__content--next_rsv
           = "#{rsv.date} #{rsv.schedule.time}"
           = link_to "[編集]", "/reservations/#{rsv.id}/edit"
           = link_to "[削除]", "/reservations/#{rsv.id}", method: :delete
