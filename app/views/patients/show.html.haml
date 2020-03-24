@@ -38,8 +38,11 @@
             = @patient.phone
     .main_container__bottom__content
       = "#{@patient.name}さんの今後の予約"
-      -# - @rsvs.each do |rsv|
-      -#   = rsv.date
+      .main_container__bottom__content--next_rsv
+        - @rsvs.each do |rsv|
+          = "#{rsv.date} #{rsv.schedule.time}"
+          = link_to "[編集]", "/reservations/#{rsv.id}/edit"
+          = link_to "[削除]", "/reservations/#{rsv.id}", method: :delete
     .main_container__bottom__content
       = form_for @log, url: patient_logs_path(@patient.id) do |f|
         = f.text_field :text, placeholder: "記録"

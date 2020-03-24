@@ -1,0 +1,10 @@
+.main_container
+  .main_container__top
+    %p 予約登録
+  .main_container__bottom
+    .main_container__bottom__content
+    = form_for @reservation do |r|
+      = r.date_select :date, {placeholder: "日付を選択してください"}
+      = r.select :schedule_id, @schedules.map{ |schedule| [schedule.time, schedule.id] }
+      = r.select :patient_id, @patients.map{ |patient| [patient.name, patient.id] }
+      = r.submit "登録する"
