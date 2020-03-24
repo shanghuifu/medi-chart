@@ -27,7 +27,9 @@ class ReservationsController < ApplicationController
   def update
     reservation = Reservation.find(params[:id])
     reservation.update(reservation_params)
+    # redirect_to patient_path(reservation_params[:patient_id])
     redirect_to reservations_path
+
   end
 
   def destroy
