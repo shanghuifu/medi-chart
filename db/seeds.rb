@@ -38,3 +38,19 @@ Schedule.create([{time: "~9:40"},
                   {time: "19:20"},
                   {time: "19:40"},
                   {time: "20:00~"}])
+
+30.times do |n|
+  name  = "example-#{n+1}"
+  email = "example-#{n+1}@example.com"
+  password = "password"
+  Patient.create!(name:  name,
+                  kana:  name,
+                  email: email,
+                  phone: "08012345678",
+                  birthday: '1996-12-23',
+                  age:      25,
+                  sex:      1,
+                  zipcode:  1231234,
+                  address1: "東京都渋谷区渋谷",
+                  address2: "1-2-3")
+end
