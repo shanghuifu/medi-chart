@@ -23,13 +23,14 @@ ActiveRecord::Schema.define(version: 2020_03_04_061918) do
   create_table "patients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "kana", null: false
+    t.string "email", null: false
+    t.string "phone", null: false
     t.date "birthday"
     t.integer "age"
     t.integer "sex"
     t.integer "zipcode"
-    t.string "address"
-    t.string "phone", null: false
-    t.string "email", null: false
+    t.string "address1"
+    t.string "address2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -3,13 +3,14 @@ class CreatePatients < ActiveRecord::Migration[5.2]
     create_table :patients do |t|
       t.string  :name, null: false
       t.string  :kana, null: false
+      t.string  :email, null: false
+      t.string  :phone, null: false
       t.date    :birthday
       t.integer :age
       t.integer :sex
       t.integer :zipcode
-      t.string  :address
-      t.string  :phone, null: false
-      t.string  :email, null: false
+      t.string  :address1
+      t.string  :address2
       t.timestamps
     end
   end
