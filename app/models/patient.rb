@@ -8,4 +8,9 @@ class Patient < ApplicationRecord
   
   has_many :logs, dependent: :delete_all
   has_many :reservations, dependent: :destroy
+
+  enum sex: {
+    男:1,
+    女:2
+  }
 end

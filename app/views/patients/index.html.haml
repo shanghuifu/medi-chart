@@ -5,8 +5,8 @@
     .main_container__bottom__content
       %table
         %tr.table_row
-          %th.th_normal  名前
-          %th.th_normal  読み
+          %th.th_wide  名前
+          %th.th_wide  読み
           %th.th_narrow  誕生日
           %th.th_narrow  年齢
           %th.th_narrow  性別
@@ -27,13 +27,13 @@
             %td
               = patient.age
             %td
-              -# = patient.sex
+              = patient.sex
             %td
               = patient.zipcode
             %td
-              -# = patient.address1
+              = patient.address1
             %td
-              -# = patient.address2
+              = patient.address2
             %td
               = patient.email
             %td
