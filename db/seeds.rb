@@ -50,7 +50,7 @@ Schedule.create([{time: "~9:40"},
 #                   birthday: '1996-12-23',
 #                   age:      25,
 #                   sex:      1,
-#                   zipcode:  1231234,
+#                   zip:  "1231234",
 #                   address1: "東京都渋谷区渋谷",
 #                   address2: "1-2-3")
 # end
