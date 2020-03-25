@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_03_04_061918) do
     t.date "birthday"
     t.integer "age"
     t.integer "sex"
-    t.integer "zipcode"
+    t.string "zip"
     t.string "address1"
     t.string "address2"
     t.datetime "created_at", null: false
