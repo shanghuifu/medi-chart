@@ -4,8 +4,14 @@
   .main_container__bottom
     .main_container__bottom__content
       = form_for @patient do |f|
-        = f.text_field :name, placeholder: "名前"
-        = f.text_field :kana, placeholder: "よみ"
-        = f.text_field :phone, placeholder: "電話"
-        = f.text_field :email, placeholder: "email"
-        = f.submit "修正する"
+        = f.text_field :name, placeholder: "名前(必須)"
+        = f.text_field :kana, placeholder: "よみ(必須)"
+        = f.text_field :phone, placeholder: "電話(必須)"
+        = f.text_field :email, placeholder: "email(必須)"
+        = f.date_select :birthday, start_year:1930, use_month_numbers: true
+        = f.text_field :age, placeholder: "年齢"
+        = f.select :sex, Patient.sexes.keys, {prompt: "性別"}
+        = f.text_field :zip, placeholder: "郵便番号"
+        = f.text_field :address1, placeholder: "住所（市区町村まで）"
+        = f.text_field :address2, placeholder: "住所（番地・建物等）"
+        = f.submit "登録する"
